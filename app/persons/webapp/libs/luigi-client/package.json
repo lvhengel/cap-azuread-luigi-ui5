@@ -1,0 +1,51 @@
+{
+  "_from": "@luigi-project/client@^1.2.4",
+  "_id": "@luigi-project/client@1.3.0",
+  "_inBundle": false,
+  "_integrity": "sha512-750SNYIHBGqDwfX7hIFvi5+NuqoS2CHKHbkszMjJDQyxw46E/19KS4Q5+tCvltxOVbJGPldi+9TYZgEbXiszLQ==",
+  "_location": "/@luigi-project/client",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@luigi-project/client@^1.2.4",
+    "name": "@luigi-project/client",
+    "escapedName": "@luigi-project%2fclient",
+    "scope": "@luigi-project",
+    "rawSpec": "^1.2.4",
+    "saveSpec": null,
+    "fetchSpec": "^1.2.4"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@luigi-project/client/-/client-1.3.0.tgz",
+  "_shasum": "84e9176072da1a9d3ad833b78f6d5a77cfd0f23e",
+  "_spec": "@luigi-project/client@^1.2.4",
+  "_where": "C:\\Users\\k.mokashi\\projects\\vacation_planner_2.0\\app",
+  "bugs": {
+    "url": "https://github.com/SAP/luigi/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Javascript library supporting consumers of the Luigi framework",
+  "homepage": "https://github.com/SAP/luigi#readme",
+  "keywords": [
+    "luigi",
+    "UI",
+    "extensibility",
+    "micro-frontends",
+    "microfrontends"
+  ],
+  "license": "Apache-2.0",
+  "main": "luigi-client.js",
+  "name": "@luigi-project/client",
+  "publishConfig": {
+    "tag": "luigi-client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SAP/luigi.git"
+  },
+  "version": "1.3.0"
+}
