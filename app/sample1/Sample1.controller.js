@@ -1,5 +1,5 @@
 sap.ui.define(
-  ['sap/ui/core/mvc/Controller', 'luigi/demo/libs/luigi-client/luigi-client'],
+  ['sap/ui/core/mvc/Controller', 'luigi/demo/assets/luigi-client/luigi-client'],
   function (Controller) {
     'use strict';
 

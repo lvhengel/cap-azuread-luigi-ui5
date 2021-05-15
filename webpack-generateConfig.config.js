@@ -6,11 +6,11 @@ module.exports = {
   watch: false,
   mode: 'production',
   entry: {
-    luigiConfig: './luigi-config.js'
+    luigiConfig: './luigi/luigi-config.js'
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'app', 'persons', 'webapp')
+    path: path.resolve(__dirname, 'app')
   },
   plugins: [
     // new webpack.BannerPlugin(
@@ -24,20 +24,17 @@ module.exports = {
       patterns: [
         {
           from: 'node_modules/@luigi-project/core',
-          to: './libs/luigi-core'
+          to: path.resolve(__dirname, 'app', 'assets') + '/luigi-core'
         },
         {
           from: 'node_modules/@luigi-project/client',
-          to: './libs/luigi-client'
+          to: path.resolve(__dirname, 'app', 'assets') + '/luigi-client'
+        },
+        {
+          from: 'node_modules/@luigi-project/plugin-auth-oauth2/callback.html',
+          to: path.resolve(__dirname, 'app', 'assets') + '/auth-oauth2/'
         }
       ]
-      //   patterns: [
-      //     // idpProvider OAuth2 callback asset
-      //     {
-      //       from: "node_modules/@luigi-project/plugin-auth-oauth2/callback.html",
-      //       to: path.resolve(__dirname, "assets") + "/auth-oauth2/",
-      //     },
-      //   ],
     })
   ],
   module: {

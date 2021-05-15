@@ -1,5 +1,7 @@
-//you can now use ES6 goodies here
+import { auth } from './auth';
+
 Luigi.setConfig({
+  auth: auth,
   navigation: {
     contextSwitcher: false,
     nodes: () => [

@@ -29,6 +29,6 @@ mta_archives/
 # .idea
 
 # Luigi config
-libs
+assets/
 luigiConfig.bundle.js
 
