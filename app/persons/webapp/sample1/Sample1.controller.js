@@ -1,10 +1,10 @@
 sap.ui.define(
-  ["sap/ui/core/mvc/Controller", "luigi/demo/libs/luigi-client/luigi-client"],
+  ['sap/ui/core/mvc/Controller', 'luigi/demo/libs/luigi-client/luigi-client'],
   function (Controller) {
-    "use strict";
+    'use strict';
 
-    return Controller.extend("luigi.demo.sample1.Sample1", {
-      onInit: function () {},
+    return Controller.extend('luigi.demo.sample1.Sample1', {
+      onInit: function () {}
     });
   }
 );

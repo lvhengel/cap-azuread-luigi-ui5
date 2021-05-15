@@ -26,7 +26,7 @@
   "scripts": {
     "cds": "cds run",
     "buildConfig": "webpack --config webpack-generateConfig.config",
-    "prestart" : "npm run buildConfig",
+    "prestart": "npm run buildConfig",
     "start": "cds run"
   },
   "eslintConfig": {

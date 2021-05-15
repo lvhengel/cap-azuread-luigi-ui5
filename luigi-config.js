@@ -4,40 +4,40 @@ Luigi.setConfig({
     contextSwitcher: false,
     nodes: () => [
       {
-        pathSegment: "home",
-        label: "Home",
-        icon: "home",
-        viewUrl: "openui5.html#/home",
+        pathSegment: 'home',
+        label: 'Home',
+        icon: 'home',
+        viewUrl: 'openui5.html#/home',
         children: [
           {
-            pathSegment: "sample1",
-            label: "First",
-            icon: "nutrition-activity",
-            viewUrl: "openui5.html#/sample1",
+            pathSegment: 'sample1',
+            label: 'First',
+            icon: 'nutrition-activity',
+            viewUrl: 'openui5.html#/sample1'
           },
           {
-            pathSegment: "sample2",
-            label: "Second",
-            icon: "paper-plane",
-            viewUrl: "sample2/sample2.html",
+            pathSegment: 'sample2',
+            label: 'Second',
+            icon: 'paper-plane',
+            viewUrl: 'sample2/sample2.html'
           },
           {
-            category: { label: "Links", icon: "cloud" },
-            label: "Luigi Project",
+            category: { label: 'Links', icon: 'cloud' },
+            label: 'Luigi Project',
             externalLink: {
-              url: "https://luigi-project.io/",
-            },
+              url: 'https://luigi-project.io/'
+            }
           },
           {
-            category: "Links",
-            label: "OpenUI5",
+            category: 'Links',
+            label: 'OpenUI5',
             externalLink: {
-              url: "https://openui5.hana.ondemand.com/",
-            },
-          },
-        ],
-      },
-    ],
+              url: 'https://openui5.hana.ondemand.com/'
+            }
+          }
+        ]
+      }
+    ]
   },
   routing: {
     /**
@@ -45,17 +45,17 @@ Luigi.setConfig({
      * For path routing, set to false
      * For hash routing, set to true
      */
-    useHashRouting: true,
+    useHashRouting: true
   },
   settings: {
     header: {
-      title: "Luigi OpenUI5",
-      logo: "/logo.png",
-      favicon: "/favicon.ico",
+      title: 'Luigi OpenUI5',
+      logo: '/logo.png',
+      favicon: '/favicon.ico'
     },
-    responsiveNavigation: "simpleMobileOnly",
+    responsiveNavigation: 'simpleMobileOnly',
     appLoadingIndicator: {
-      hideAutomatically: true,
-    },
-  },
+      hideAutomatically: true
+    }
+  }
 });

@@ -1,16 +1,16 @@
-const path = require("path");
-const webpack = require("webpack");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   watch: false,
-  mode: "production",
+  mode: 'production',
   entry: {
-    luigiConfig: "./luigi-config.js",
+    luigiConfig: './luigi-config.js'
   },
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "app", "persons", "webapp"),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'app', 'persons', 'webapp')
   },
   plugins: [
     // new webpack.BannerPlugin(
@@ -23,14 +23,14 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: "node_modules/@luigi-project/core",
-          to: "./libs/luigi-core",
+          from: 'node_modules/@luigi-project/core',
+          to: './libs/luigi-core'
         },
         {
-          from: "node_modules/@luigi-project/client",
-          to: "./libs/luigi-client",
-        },
-      ],
+          from: 'node_modules/@luigi-project/client',
+          to: './libs/luigi-client'
+        }
+      ]
       //   patterns: [
       //     // idpProvider OAuth2 callback asset
       //     {
@@ -38,18 +38,18 @@ module.exports = {
       //       to: path.resolve(__dirname, "assets") + "/auth-oauth2/",
       //     },
       //   ],
-    }),
+    })
   ],
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          rootMode: "root",
-        },
-      },
-    ],
-  },
+          rootMode: 'root'
+        }
+      }
+    ]
+  }
 };
