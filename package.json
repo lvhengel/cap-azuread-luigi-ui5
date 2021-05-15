@@ -25,9 +25,9 @@
   },
   "scripts": {
     "cds": "cds run",
-    "build": "webpack --entry ./luigi-config.js -o ./public/luigi-config.js --mode production",
     "buildConfig": "webpack --config webpack-generateConfig.config",
-    "start": "concurrently \"npm run buildConfig -- --watch\" \"cds run\""
+    "prestart" : "npm run buildConfig",
+    "start": "cds run"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",

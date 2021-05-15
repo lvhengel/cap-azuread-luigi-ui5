@@ -27,3 +27,8 @@ mta_archives/
 # IDEs
 # .vscode
 # .idea
+
+# Luigi config
+libs
+luigiConfig.bundle.js
+
