@@ -1,0 +1,40 @@
+<mvc:View controllerName="luigi.demo.employees.controller.MainView" displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <App id="idAppControl">
+    <pages>
+      <Page title="{i18n>title}">
+        <content>
+
+          <Button text="Detail" press=".onPressDetail"/>
+
+          <Table inset="true" items="{/Persons}">
+            <columns>
+              <Column width="12em">
+                <Text text="Firstname" />
+              </Column>
+              <Column width="12em">
+                <Text text="Lastname" />
+              </Column>
+              <Column width="12em">
+                <Text text="Email" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{firstname}"/>
+                  <Text text="{lastname}"/>
+                  <Text text="{email}"/>
+                </cells>
+              </ColumnListItem>
+            </items>
+
+          </Table>
+
+
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

@@ -1,0 +1,125 @@
+{
+  "_version": "1.21.0",
+  "sap.app": {
+    "id": "luigi.demo.persondetails",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "dataSources": {
+      "persons": {
+        "uri": "/persons/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService//persons/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "rootView": {
+      "viewName": "luigi.demo.persondetails.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "idAppControl"
+    },
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "luigi.demo.persondetails.i18n.i18n"
+        }
+      },
+      "": {
+        "type": "sap.ui.model.odata.v4.ODataModel",
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": false,
+          "groupProperties": {
+            "default": {
+              "submit": "Auto"
+            }
+          }
+        },
+        "dataSource": "persons"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "luigi.demo.persondetails.view",
+        "controlId": "idAppControl",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        {
+					"pattern": "",
+					"name": "detail",
+					"target": ["detail"]
+				},
+        {
+          "name": "RouteMainView",
+          "pattern": "RouteMainView",
+          "target": ["TargetMainView"]
+        }
+      ],
+      "targets": {
+        "TargetMainView": {
+          "viewType": "XML",
+          "viewLevel": 1,
+          "viewId": "idAppControl",
+          "viewName": "MainView"
+        },
+        "detail": {
+          "viewType": "XML",
+          "viewLevel": 1,
+          "viewName": "Detail"
+        }
+      }
+    }
+  }
+}

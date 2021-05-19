@@ -1,0 +1,15 @@
+<mvc:View controllerName="luigi.demo.persondetails.controller.Detail" displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page id="pageDetail">
+    <customHeader>
+      <Bar>
+        <contentRight>
+          <Button id="edit" text="Edit" visible="{= !${app>/editMode} }" press="handleEditPress" />
+          <Button id="save" text="Save" type="Emphasized" visible="{= ${app>/editMode} }" press="handleSavePress" />
+          <Button id="cancel" text="Cancel" visible="{= ${app>/editMode} }" press="handleCancelPress" />
+        </contentRight>
+      </Bar>
+    </customHeader>
+  </Page>
+</mvc:View>

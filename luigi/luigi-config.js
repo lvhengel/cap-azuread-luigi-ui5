@@ -12,30 +12,16 @@ Luigi.setConfig({
         viewUrl: 'openui5.html#/home',
         children: [
           {
-            pathSegment: 'sample1',
-            label: 'First',
+            pathSegment: 'persondetails',
+            label: 'Person Details',
             icon: 'nutrition-activity',
-            viewUrl: 'openui5.html#/sample1'
+            viewUrl: 'persondetails/index.html'
           },
           {
-            pathSegment: 'sample2',
-            label: 'Second',
+            pathSegment: 'employees',
+            label: 'My Team',
             icon: 'paper-plane',
-            viewUrl: 'sample2/sample2.html'
-          },
-          {
-            category: { label: 'Links', icon: 'cloud' },
-            label: 'Luigi Project',
-            externalLink: {
-              url: 'https://luigi-project.io/'
-            }
-          },
-          {
-            category: 'Links',
-            label: 'OpenUI5',
-            externalLink: {
-              url: 'https://openui5.hana.ondemand.com/'
-            }
+            viewUrl: 'employees/index.html'
           }
         ]
       }
@@ -56,8 +42,11 @@ Luigi.setConfig({
       favicon: '/favicon.ico'
     },
     responsiveNavigation: 'simpleMobileOnly',
-    appLoadingIndicator: {
-      hideAutomatically: true
+    // appLoadingIndicator: {
+    //   hideAutomatically: false
+    // },
+    loadingIndicator: {
+      enabled: false
     }
   }
 });
