@@ -39,7 +39,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "rootView": {
-      "viewName": "luigi.demo.employees.view.MainView",
+      "viewName": "luigi.demo.employees.view.App",
       "type": "XML",
       "async": true,
       "id": "idAppControl"
@@ -97,28 +97,16 @@
       },
       "routes": [
         {
-          "name": "RouteMainView",
-          "pattern": "RouteMainView",
-          "target": ["TargetMainView"]
-        },
-        {
-          "name": "detail",
-          "pattern": "detail",
-          "target" : ["detail"]
+          "pattern": "",
+          "name": "employees",
+          "target": ["employees"]
         }
       ],
       "targets": {
-        "TargetMainView": {
+        "employees": {
           "viewType": "XML",
           "viewLevel": 1,
-          "viewId": "idAppControl",
-          "viewName": "MainView"
-        },
-        "detail": {
-          "viewType": "XML",
-          "viewLevel": 1,
-          
-          "viewName": "Detail"
+          "viewName": "Employees"
         }
       }
     }

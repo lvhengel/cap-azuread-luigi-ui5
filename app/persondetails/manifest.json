@@ -100,20 +100,9 @@
 					"pattern": "",
 					"name": "detail",
 					"target": ["detail"]
-				},
-        {
-          "name": "RouteMainView",
-          "pattern": "RouteMainView",
-          "target": ["TargetMainView"]
-        }
+				}
       ],
       "targets": {
-        "TargetMainView": {
-          "viewType": "XML",
-          "viewLevel": 1,
-          "viewId": "idAppControl",
-          "viewName": "MainView"
-        },
         "detail": {
           "viewType": "XML",
           "viewLevel": 1,

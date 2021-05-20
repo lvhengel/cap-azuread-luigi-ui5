@@ -37,7 +37,7 @@ Luigi.setConfig({
   },
   settings: {
     header: {
-      title: 'Luigi OpenUI5',
+      title: 'Luigi, CAP, Azure, UI5',
       logo: '/logo.png',
       favicon: '/favicon.ico'
     },

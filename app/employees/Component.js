@@ -2,7 +2,8 @@ sap.ui.define(
   [
     'sap/ui/core/UIComponent',
     'sap/ui/Device',
-    'luigi/demo/employees/model/models'
+    'luigi/demo/employees/model/models',
+    'luigi-client/luigi-client'
   ],
   function (UIComponent, Device, models) {
     'use strict';
@@ -26,8 +27,6 @@ sap.ui.define(
 
         // set the device model
         this.setModel(models.createDeviceModel(), 'device');
-
-        LuigiClient.uxManager().hideLoadingIndicator();
       }
     });
   }

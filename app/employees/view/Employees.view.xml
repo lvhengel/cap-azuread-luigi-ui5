@@ -1,0 +1,30 @@
+<mvc:View controllerName="luigi.demo.employees.controller.Employees" displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page title="">
+    <content>
+      <Table inset="true" headerText="{i18n>tableTitle}" items="{/Persons}">
+        <columns>
+          <Column width="12em">
+            <Text text="Firstname" />
+          </Column>
+          <Column width="12em">
+            <Text text="Lastname" />
+          </Column>
+          <Column width="12em">
+            <Text text="Email" />
+          </Column>
+        </columns>
+        <items>
+          <ColumnListItem>
+            <cells>
+              <Text text="{firstname}"/>
+              <Text text="{lastname}"/>
+              <Text text="{email}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

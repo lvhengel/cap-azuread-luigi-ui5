@@ -3,7 +3,7 @@ sap.ui.define(
   function (Controller) {
     'use strict';
 
-    return Controller.extend('luigi.demo.employees.controller.Detail', {
+    return Controller.extend('luigi.demo.employees.controller.Employees', {
       // onPressDetail: function (oEvent) {
       //   this.navTo('detail');
       // }
