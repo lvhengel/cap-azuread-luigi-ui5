@@ -11,11 +11,10 @@
     "description": "{{appDescription}}",
     "dataSources": {
       "persons": {
-        "uri": "/persons/",
+        "uri": "/v2/persons/",
         "type": "OData",
         "settings": {
-          "localUri": "localService//persons/metadata.xml",
-          "odataVersion": "4.0"
+          "odataVersion": "2.0"
         }
       }
     }

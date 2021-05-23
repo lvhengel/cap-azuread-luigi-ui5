@@ -11,11 +11,10 @@
     "description": "{{appDescription}}",
     "dataSources": {
       "persons": {
-        "uri": "/persons/",
+        "uri": "/v2/persons/",
         "type": "OData",
         "settings": {
-          "localUri": "localService//persons/metadata.xml",
-          "odataVersion": "4.0"
+          "odataVersion": "2.0"
         }
       }
     }
@@ -62,21 +61,6 @@
         "settings": {
           "bundleName": "luigi.demo.employees.i18n.i18n"
         }
-      },
-      "": {
-        "type": "sap.ui.model.odata.v4.ODataModel",
-        "settings": {
-          "synchronizationMode": "None",
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true,
-          "groupProperties": {
-            "default": {
-              "submit": "Auto"
-            }
-          }
-        },
-        "dataSource": "persons"
       }
     },
     "resources": {

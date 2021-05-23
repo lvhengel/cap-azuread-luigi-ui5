@@ -24,7 +24,15 @@ sap.ui.define(
 
         this.getView().bindElement({
           path: '/Persons(1)',
-          parameters: { $$updateGroupId: 'myGroup' }
+          //parameters: { $$updateGroupId: 'myGroup' },
+          events: {
+            change: function (oEvent) {
+              //debugger;
+            },
+            dataReceived: function (oData) {
+              //debugger;
+            }
+          }
         });
       },
 
@@ -37,7 +45,8 @@ sap.ui.define(
         this._toggleButtonsAndView(false);
       },
       handleSavePress: function (oEvent) {
-        this.getView().getModel().submitBatch('myGroup');
+        //this.getView().getModel().submitBatch('myGroup');
+        this.getView().getModel().submitChanges();
         this._toggleButtonsAndView(false);
       },
 

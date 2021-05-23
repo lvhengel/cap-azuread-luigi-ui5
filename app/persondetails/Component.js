@@ -3,9 +3,9 @@ sap.ui.define(
     'sap/ui/core/UIComponent',
     'sap/ui/Device',
     'luigi/demo/persondetails/model/models',
-    'luigi-client/luigi-client'
+    'sap/ui/model/odata/v2/ODataModel'
   ],
-  function (UIComponent, Device, models) {
+  function (UIComponent, Device, models, ODataModel) {
     'use strict';
 
     return UIComponent.extend('luigi.demo.persondetails.Component', {
@@ -19,6 +19,22 @@ sap.ui.define(
        * @override
        */
       init: function () {
+        var accessToken = LuigiClient.getToken();
+        var personsUri = this.getManifestEntry(
+          '/sap.app/dataSources/persons/uri'
+        );
+        var personsParameters = {
+          headers: {
+            Authorization: 'Bearer ' + accessToken
+          },
+          useBatch: false,
+          defaultBindingMode: 'TwoWay',
+          defaultUpdateMethod: 'Merge'
+        };
+        //};
+        var oModel = new ODataModel(personsUri, personsParameters);
+        this.setModel(oModel);
+
         // call the base component's init function
         UIComponent.prototype.init.apply(this, arguments);
 
