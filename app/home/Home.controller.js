@@ -19,7 +19,6 @@ sap.ui.define(
             .setText('Luigi Client Initialized!');
           console.log('Luigi Client Initialized!');
         });
-
         LuigiClient.addContextUpdateListener((updatedContext) => {
           console.log('Luigi Client Updated!');
         });

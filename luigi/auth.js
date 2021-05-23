@@ -6,26 +6,23 @@ export const auth = {
   oAuth2ImplicitGrant: {
     idpProvider: oAuth2ImplicitGrant,
     authorizeUrl:
-      'https://login.microsoftonline.com/8ae5d2a5-eec7-40ad-b1ca-8d997fd0d348/oauth2/v2.0/authorize',
+      'https://login.microsoftonline.com/b00367e2-193a-4f48-94de-7245d45c0947/oauth2/v2.0/authorize',
     logoutUrl: 'logout.html',
     //post_logout_redirect_uri: '/logout.html',
     oAuthData: {
       response_type: 'id_token token',
-      client_id: '25efc86f-fac5-46a4-9963-9cbafbe02167',
-      scope: 'openid profile api://25efc86f-fac5-46a4-9963-9cbafbe02167/default'
+      client_id: '0e31c709-7469-47dd-b235-84755be8f5f5',
+      scope: 'openid profile api://0e31c709-7469-47dd-b235-84755be8f5f5/default'
     },
     userInfoFn: async (settings, authData) => {
       const userInfo = {};
 
       try {
         const data = parseJWT(authData.idToken);
-        //userInfo.name = data.name;
-        userInfo.email = data.preferred_username;
-        userInfo.email = userInfo.email.toLocaleLowerCase();
+        userInfo.email = data.preferred_username.toLocaleLowerCase();
       } catch (err) {
         console.error('Could not parse JWT token', err);
       }
-
       return userInfo;
     },
     logoutFn: async (settings, authData, logoutCallback) => {
@@ -35,14 +32,18 @@ export const auth = {
       Luigi.auth().store.removeAuthData();
 
       window.location.replace(
-        `https://login.microsoftonline.com/8ae5d2a5-eec7-40ad-b1ca-8d997fd0d348/oauth2/logout?post_logout_redirect_uri=` +
+        `https://login.microsoftonline.com/b00367e2-193a-4f48-94de-7245d45c0947/oauth2/logout?post_logout_redirect_uri=` +
           location.origin +
           '/logout.html'
       );
-
-      //logoutCallback('/logout.html');
     }
   }
+  // events: {
+  //   onAuthSuccessful: (settings, authData) => {
+  //     console.log(settings);
+  //     console.log(authData);
+  //   }
+  // }
   //disableAutoLogin: true
 };
 

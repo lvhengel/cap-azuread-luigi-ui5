@@ -11,7 +11,6 @@ sap.ui.define(
         this.getRouter()
           .getRoute('detail')
           .attachPatternMatched(this._onDetailMatched, this);
-        //debugger;
 
         this._formFragments = {};
 
@@ -20,19 +19,12 @@ sap.ui.define(
       },
 
       _onDetailMatched: function (oEvent) {
-        this._sObjectId = '1';
+        var sObjectPath = this.getView().getModel().createKey('/Persons', {
+          ID: LuigiClient.getContext().id
+        });
 
         this.getView().bindElement({
-          path: '/Persons(1)',
-          //parameters: { $$updateGroupId: 'myGroup' },
-          events: {
-            change: function (oEvent) {
-              //debugger;
-            },
-            dataReceived: function (oData) {
-              //debugger;
-            }
-          }
+          path: sObjectPath
         });
       },
 
@@ -45,7 +37,6 @@ sap.ui.define(
         this._toggleButtonsAndView(false);
       },
       handleSavePress: function (oEvent) {
-        //this.getView().getModel().submitBatch('myGroup');
         this.getView().getModel().submitChanges();
         this._toggleButtonsAndView(false);
       },

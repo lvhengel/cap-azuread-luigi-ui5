@@ -1,52 +1,55 @@
 import { auth } from './auth';
+import { navigation, getNavigationData, resolveNavigation } from './navigation';
 
-Luigi.setConfig({
-  auth: auth,
-  navigation: {
-    contextSwitcher: false,
-    nodes: () => [
-      {
-        pathSegment: 'home',
-        label: 'Home',
-        icon: 'home',
-        viewUrl: 'openui5.html#/home',
-        children: [
-          {
-            pathSegment: 'persondetails',
-            label: 'Person Details',
-            icon: 'nutrition-activity',
-            viewUrl: 'persondetails/index.html'
-          },
-          {
-            pathSegment: 'employees',
-            label: 'My Team',
-            icon: 'paper-plane',
-            viewUrl: 'employees/index.html'
-          }
-        ]
-      }
-    ]
-  },
-  routing: {
-    /**
-     * Development:
-     * For path routing, set to false
-     * For hash routing, set to true
-     */
-    useHashRouting: true
-  },
-  settings: {
-    header: {
-      title: 'Luigi, CAP, Azure, UI5',
-      logo: '/logo.png',
-      favicon: '/favicon.ico'
+(async () => {
+  const luigiConfig = {
+    auth,
+    navigation,
+    routing: {
+      useHashRouting: true
     },
-    responsiveNavigation: 'simpleMobileOnly',
-    // appLoadingIndicator: {
-    //   hideAutomatically: false
-    // },
-    loadingIndicator: {
-      enabled: false
+    settings: {
+      header: {
+        title: 'Luigi, CAP, Azure, UI5',
+        logo: '/logo.png',
+        favicon: '/favicon.ico'
+      },
+      responsiveNavigation: 'semiCollapsible',
+      // appLoadingIndicator: {
+      //   hideAutomatically: false
+      // },
+      //loadingIndicator: {
+      //  enabled: false
+      //},
+      appLoadingIndicator: {
+        hideAutomatically: true
+      }
+    },
+    lifecycleHooks: {
+      luigiAfterInit: async () => {
+        const authData = Luigi.auth().store.getAuthData();
+
+        console.log('authData=' + authData);
+
+        if (authData) {
+          const response = await fetch('/persons/userinfo()', {
+            method: 'GET',
+            headers: {
+              Authorization: 'Bearer ' + authData.accessToken
+            }
+          });
+          const userInfo = await response.json();
+
+          console.log(userInfo);
+
+          getNavigationData(userInfo).then((response) => {
+            resolveNavigation(response);
+            Luigi.configChanged('navigation');
+          });
+        }
+      }
     }
-  }
-});
+  };
+
+  Luigi.setConfig(luigiConfig);
+})();

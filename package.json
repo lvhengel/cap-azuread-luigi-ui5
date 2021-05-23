@@ -7,28 +7,38 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^5.1.4",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.6.2",
     "cors": "^2.8.5",
     "express": "^4",
-    "helmet": "^4.6.0"
+    "helmet": "^4.6.0",
+    "passport": "^0.4.1",
+    "passport-azure-ad": "^4.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.2",
     "@luigi-project/client": "^1.12.1",
     "@luigi-project/core": "^1.12.1",
     "@luigi-project/plugin-auth-oauth2": "^1.12.1",
-    "babel-loader": "^8.2.2",
     "concurrently": "^6.1.0",
     "copy-webpack-plugin": "^6.4.1",
     "prettier": "^2.3.0",
     "sqlite3": "^5.0.2",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-es2017": "^7.0.0-beta.53",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-preset-minify": "^0.5.0",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
     "cds": "cds run",
     "buildConfig": "webpack --config webpack-generateConfig.config",
     "prestart": "npm run buildConfig",
-    "start": "cds run"
+    "start": "node mainserver.js"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -57,6 +67,9 @@
   },
   "cds": {
     "requires": {
+      "auth": {
+        "impl": "srv/auth.js"
+      },
       "db": {
         "kind": "sqlite",
         "model": "*"

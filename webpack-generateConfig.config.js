@@ -31,7 +31,7 @@ module.exports = {
           to: path.resolve(__dirname, 'app', 'assets') + '/luigi-client'
         },
         {
-          from: 'node_modules/@luigi-project/plugin-auth-oauth2/callback.html',
+          from: 'node_modules/@luigi-project/plugin-auth-oauth2',
           to: path.resolve(__dirname, 'app', 'assets') + '/auth-oauth2/'
         }
       ]

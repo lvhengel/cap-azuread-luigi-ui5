@@ -6,6 +6,28 @@ export let navigation = {
   nodes: new Promise((res) => {
     resolveNavigation = res;
   })
+  // nodes: () => [
+  //   {
+  //     pathSegment: 'home',
+  //     label: 'Home',
+  //     icon: 'home',
+  //     viewUrl: 'openui5.html#/home',
+  //     children: [
+  //       {
+  //         pathSegment: 'persondetails',
+  //         label: 'Person Details',
+  //         icon: 'nutrition-activity',
+  //         viewUrl: 'persondetails/index.html'
+  //       },
+  //       {
+  //         pathSegment: 'employees',
+  //         label: 'My Team',
+  //         icon: 'paper-plane',
+  //         viewUrl: 'employees/index.html'
+  //       }
+  //     ]
+  //   }
+  // ]
 };
 
 export function getNavigationData(userInfo) {
