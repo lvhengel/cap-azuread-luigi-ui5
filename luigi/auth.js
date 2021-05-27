@@ -11,8 +11,8 @@ export const auth = {
     //post_logout_redirect_uri: '/logout.html',
     oAuthData: {
       response_type: 'id_token token',
-      client_id: '0e31c709-7469-47dd-b235-84755be8f5f5',
-      scope: 'openid profile api://0e31c709-7469-47dd-b235-84755be8f5f5/default'
+      client_id: '09b96238-c657-4e31-9e50-fb01e258fe83',
+      scope: 'openid profile api://09b96238-c657-4e31-9e50-fb01e258fe83/default'
     },
     userInfoFn: async (settings, authData) => {
       const userInfo = {};

@@ -9,7 +9,7 @@ exports.creds = {
   // 'https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration'
 
   // Required
-  clientID: '0e31c709-7469-47dd-b235-84755be8f5f5',
+  clientID: '09b96238-c657-4e31-9e50-fb01e258fe83',
 
   // Required.
   // If you are using the common endpoint, you should either set `validateIssuer` to false, or provide a value for `issuer`.
