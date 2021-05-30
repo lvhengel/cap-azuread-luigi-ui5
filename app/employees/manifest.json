@@ -84,6 +84,16 @@
           "pattern": "",
           "name": "employees",
           "target": ["employees"]
+        }, 
+        {
+          "pattern": "edit/{id}",
+          "name": "edit",
+          "target": ["edit"]
+        },
+        {
+          "pattern": "add",
+          "name": "add",
+          "target": ["add"]
         }
       ],
       "targets": {
@@ -91,6 +101,16 @@
           "viewType": "XML",
           "viewLevel": 1,
           "viewName": "Employees"
+        },
+        "edit": {
+          "viewType": "XML",
+          "viewLevel": 1,
+          "viewName": "Edit"
+        },
+        "add": {
+          "viewType": "XML",
+          "viewLevel": 1,
+          "viewName": "Add"
         }
       }
     }

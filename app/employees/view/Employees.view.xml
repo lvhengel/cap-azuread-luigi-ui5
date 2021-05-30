@@ -1,9 +1,17 @@
 <mvc:View controllerName="luigi.demo.employees.controller.Employees" displayBlock="true"
+  xmlns:core="sap.ui.core"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
   <Page title="">
     <content>
-      <Table inset="true" headerText="{i18n>tableTitle}" items="{/Persons}">
+      <Table inset="true" items="{/Persons}">
+        <headerToolbar>
+          <OverflowToolbar>
+            <Title text="{i18n>tableTitle}" level="H2" />
+            <ToolbarSpacer />
+            <Button icon="sap-icon://add" type="Transparent" press="onAdd" />
+          </OverflowToolbar>
+        </headerToolbar>
         <columns>
           <Column width="12em">
             <Text text="Firstname" />
@@ -14,6 +22,9 @@
           <Column width="12em">
             <Text text="Email" />
           </Column>
+          <Column width="2em">
+            <Text text="" />
+          </Column>
         </columns>
         <items>
           <ColumnListItem>
@@ -21,6 +32,7 @@
               <Text text="{firstname}"/>
               <Text text="{lastname}"/>
               <Text text="{email}"/>
+              <core:Icon src="sap-icon://edit" press="onPressEdit"/>
             </cells>
           </ColumnListItem>
         </items>

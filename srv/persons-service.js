@@ -2,6 +2,16 @@
 
 module.exports = async (srv) => {
   // Function Import userInfo()
+  const db = await cds.connect.to('db');
+  const { Persons } = db.entities;
+
+  srv.before('CREATE', 'Persons', async (req) => {
+    const { ID } = await cds
+      .tx(req)
+      .run(SELECT.one.from(Persons).columns('max(ID) as ID'));
+
+    req.data.ID = ID - (ID % 100) + 100 + 1;
+  });
 
   srv.before('READ', 'Persons', async (req) => {
     if (req.user.is('Employee')) {

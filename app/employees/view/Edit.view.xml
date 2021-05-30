@@ -1,0 +1,29 @@
+<mvc:View controllerName="luigi.demo.employees.controller.Edit" displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page id="pageDetail">
+        <customHeader>
+            <Bar>
+                <contentRight>
+                    <Button id="save" text="Save" type="Emphasized" visible="true" press="handleSavePress" />
+                    <Button id="cancel" text="Cancel" visible="true" press="handleCancelPress" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="{i18n>formDetails}" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                    <f:content>
+                        <Label text="{i18n>lblFirstname}" />
+                        <Input value="{firstname}" />
+                        <Label text="{i18n>lblLastname}" />
+                        <Input value="{lastname}"/>
+                        <Label text="{i18n>lblEmail}"/>
+                        <Input value="{email}"/>
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

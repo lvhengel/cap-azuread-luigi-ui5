@@ -4,9 +4,14 @@ sap.ui.define(
     'use strict';
 
     return Controller.extend('luigi.demo.employees.controller.Employees', {
-      // onPressDetail: function (oEvent) {
-      //   this.navTo('detail');
-      // }
+      onPressEdit: function (oEvent) {
+        var id = oEvent.getSource().getBindingContext().getProperty('ID');
+        this.getRouter().navTo('edit', { id: id });
+      },
+
+      onAdd: function (oEvent) {
+        this.getRouter().navTo('add');
+      }
     });
   }
 );
