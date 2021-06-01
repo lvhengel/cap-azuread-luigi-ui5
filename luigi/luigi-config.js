@@ -15,12 +15,6 @@ import { navigation, getNavigationData, resolveNavigation } from './navigation';
         favicon: '/favicon.ico'
       },
       responsiveNavigation: 'semiCollapsible',
-      // appLoadingIndicator: {
-      //   hideAutomatically: false
-      // },
-      //loadingIndicator: {
-      //  enabled: false
-      //},
       appLoadingIndicator: {
         hideAutomatically: true
       }
@@ -39,8 +33,6 @@ import { navigation, getNavigationData, resolveNavigation } from './navigation';
             }
           });
           const userInfo = await response.json();
-
-          console.log(userInfo);
 
           getNavigationData(userInfo).then((response) => {
             resolveNavigation(response);
