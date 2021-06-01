@@ -2,3 +2,5 @@ ID;firstname;lastname;email;role;unit_ID
 1;Leo;van Hengel;l.vanhengel@reply.de;Manager;1
 2;Kushal;Mokashi;k.mokashi@reply.de;Manager;1
 3;Hendrik;Neumann;h.neumann@reply.de;Manager;2
+4;Leo;van Hengel;lvhengel@syskoplan.onmicrosoft.com;Employee;3
+5;Kushal;Mokashi;kushal@syskoplan.onmicrosoft.com;Manager;3

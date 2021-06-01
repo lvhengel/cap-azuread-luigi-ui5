@@ -3,13 +3,13 @@ exports.creds = {
   // Requried
   //identityMetadata:
   identityMetadata:
-    'https://login.microsoftonline.com/reply.onmicrosoft.com/v2.0/.well-known/openid-configuration',
+    'https://login.microsoftonline.com/syskoplan.onmicrosoft.com/v2.0/.well-known/openid-configuration',
   // or 'https://login.microsoftonline.com/<your_tenant_guid>/v2.0/.well-known/openid-configuration'
   // or you can use the common endpoint
   // 'https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration'
 
   // Required
-  clientID: '09b96238-c657-4e31-9e50-fb01e258fe83',
+  clientID: '25efc86f-fac5-46a4-9963-9cbafbe02167',
 
   // Required.
   // If you are using the common endpoint, you should either set `validateIssuer` to false, or provide a value for `issuer`.
