@@ -28,6 +28,10 @@
                 <Text text="{lastname}"/>
                 <Label text="{i18n>lblEmail}"/>
                 <Text text="{email}"/>
+				<Label text="{i18n>lblRole}"/>
+                <Text text="{role}"/>
+				<Label text="{i18n>lblUnit}"/>
+                <Text text="{unit}"/>
 			</f:content>
 		</f:SimpleForm>
 	</VBox>

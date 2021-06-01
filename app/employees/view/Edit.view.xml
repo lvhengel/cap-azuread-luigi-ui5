@@ -21,6 +21,10 @@
                         <Input value="{lastname}"/>
                         <Label text="{i18n>lblEmail}"/>
                         <Input value="{email}"/>
+                        <Label text="{i18n>lblRole}"/>
+                        <Text text="{role}"/>
+                        <Label text="{i18n>lblUnit}"/>
+                        <Text text="{unit}"/>
                     </f:content>
                 </f:SimpleForm>
             </VBox>

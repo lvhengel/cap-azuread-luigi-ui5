@@ -11,9 +11,6 @@ sap.ui.define(
       },
 
       _onEditMatched: function (oEvent) {
-        debugger;
-
-        //oEvent.getParameter("arguments").invoicePath
         var id = oEvent.getParameter('arguments').id;
 
         var sObjectPath = this.getView().getModel().createKey('/Persons', {

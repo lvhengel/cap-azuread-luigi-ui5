@@ -5,11 +5,6 @@ sap.ui.define(
 
     return Controller.extend('luigi.demo.persondetails.controller.App', {
       onInit: function () {
-        //debugger;
-        // this.getRouter()
-        //   .getRoute('RouteMainView')
-        //   .attachPatternMatched(this._onDetailMatched, this);
-        //debugger;
       },
 
       onPressDetail: function (oEvent) {

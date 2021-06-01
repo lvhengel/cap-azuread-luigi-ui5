@@ -13,14 +13,20 @@
           </OverflowToolbar>
         </headerToolbar>
         <columns>
-          <Column width="12em">
+          <Column width="5em">
             <Text text="Firstname" />
           </Column>
-          <Column width="12em">
+          <Column width="5em">
             <Text text="Lastname" />
           </Column>
           <Column width="12em">
             <Text text="Email" />
+          </Column>
+          <Column width="5em">
+            <Text text="Role" />
+          </Column>
+          <Column width="5em">
+            <Text text="Unit" />
           </Column>
           <Column width="2em">
             <Text text="" />
@@ -32,6 +38,8 @@
               <Text text="{firstname}"/>
               <Text text="{lastname}"/>
               <Text text="{email}"/>
+              <Text text="{role}"/>
+               <Text text="{unit}"/>
               <core:Icon src="sap-icon://edit" press="onPressEdit"/>
             </cells>
           </ColumnListItem>

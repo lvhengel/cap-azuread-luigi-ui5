@@ -20,13 +20,6 @@ sap.ui.define(
         });
 
         this.getView().setBindingContext(oContext);
-        // var sObjectPath = this.getView().getModel().createKey('/Persons', {
-        //   ID: id
-        // });
-
-        // this.getView().bindElement({
-        //   path: sObjectPath
-        // });
       },
 
       handleSavePress: function (oEvent) {
@@ -42,7 +35,6 @@ sap.ui.define(
           unit_ID: 1
         });
 
-        // //this._toggleButtonsAndView(false);
         this.getRouter().navTo('employees');
       },
 

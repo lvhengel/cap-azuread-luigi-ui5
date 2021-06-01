@@ -1,7 +1,9 @@
 using {cap.azuread.luigi.ui5 as my} from '../db/schema';
 
 service PersonsService @(requires : 'authenticated-user') {
-    entity Persons as projection on my.Persons
+    entity Persons as projection on my.Persons {
+        *, unit.ID as unit_ID, unit.name as unit
+    }
 
     type UserInfo {
         id        : Integer;
