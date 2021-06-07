@@ -6,12 +6,7 @@
 	xmlns:mvc="sap.ui.core.mvc">
 	<App id="app">
 		<VBox class="sapUiMediumMargin">
-			<Title  class="sapUiSmallMargin" titleStyle="H1" text="Home" wrapping="true" />
-			<f:Card class="sapUiSmallMargin">
-				<f:content>
-					<Title  class="sapUiSmallMargin" titleStyle="H4" id="luigi-initialized"  text="" wrapping="true" />
-				</f:content>
-			</f:Card>
+			<Title id="idTitle" class="sapUiSmallMargin" titleStyle="H1" text="" wrapping="true" />
 		</VBox>
 	</App>
 </mvc:View>

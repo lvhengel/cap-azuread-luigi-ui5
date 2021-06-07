@@ -17,6 +17,7 @@ export const auth = {
 
       try {
         const data = parseJWT(authData.idToken);
+        userInfo.name = data.name;
         userInfo.email = data.preferred_username.toLocaleLowerCase();
       } catch (err) {
         console.error('Could not parse JWT token', err);
