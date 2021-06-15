@@ -17,3 +17,5 @@ ID;firstname;lastname;email;role;unit_ID
 16;Nestor;Wilke;NestorW@syskoplan.onmicrosoft.com;Employee;3
 17;Patti;Fernandez;PattiF@syskoplan.onmicrosoft.com;Employee;3
 18;Pradeep;Gupta;PradeepG@syskoplan.onmicrosoft.com;Employee;3
+19;Kushal;Mokashi;manager@syskoplan.onmicrosoft.com;Manager;4
+20;Leo;van Hengel;employee@syskoplan.onmicrosoft.com;Employee;4
