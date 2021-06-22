@@ -5,6 +5,8 @@ sap.ui.define(
 
     return Controller.extend('luigi.demo.employees.controller.Add', {
       onInit: function () {
+
+        this._unitID = LuigiClient.getContext().unit_ID;
         this.getRouter()
           .getRoute('add')
           .attachPatternMatched(this._onAddMatched, this);
@@ -16,7 +18,7 @@ sap.ui.define(
           lastname: '',
           email: '',
           role: 'Employee',
-          unit_ID: 1
+          //unit_ID: this._unitID
         });
 
         this.getView().setBindingContext(oContext);
@@ -32,7 +34,10 @@ sap.ui.define(
           lastname: oContext.getProperty('lastname'),
           email: oContext.getProperty('email'),
           role: 'Employee',
-          unit_ID: 1
+          unit: {
+            ID: this._unitID
+          }
+          //unit_ID: this._unitID
         });
 
         this.getRouter().navTo('employees');

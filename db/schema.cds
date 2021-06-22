@@ -6,7 +6,7 @@ type Role : String enum {
 }
 
 entity Persons {
-    key ID        : Integer;
+    key ID        : UUID;
         firstname : String;
         lastname  : String;
         email     : String;
@@ -15,6 +15,7 @@ entity Persons {
 }
 
 entity Units {
-    key ID   : Integer;
+    key ID   : UUID;
         name : String;
+        persons: Association to many Persons on persons.unit = $self
 }

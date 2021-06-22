@@ -18,7 +18,10 @@ sap.ui.define(
         });
 
         this.getView().bindElement({
-          path: sObjectPath
+          path: sObjectPath,
+          parameters: {
+            expand: 'unit'
+          }
         });
       },
 

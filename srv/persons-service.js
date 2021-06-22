@@ -6,11 +6,8 @@ module.exports = async (srv) => {
   const { Persons } = db.entities;
 
   srv.before('CREATE', 'Persons', async (req) => {
-    const { ID } = await cds
-      .tx(req)
-      .run(SELECT.one.from(Persons).columns('max(ID) as ID'));
-
-    req.data.ID = ID - (ID % 100) + 100 + 1;
+    //console.log(req);
+    //req.data.unit_ID = req.user.unit_ID;
   });
 
   srv.before('READ', 'Persons', async (req) => {

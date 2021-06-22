@@ -4,7 +4,7 @@
   xmlns:mvc="sap.ui.core.mvc">
   <Page title="">
     <content>
-      <Table inset="true" items="{/Persons}">
+      <Table inset="true" items="{path: '/Persons', parameters: { expand: 'unit'} }">
         <headerToolbar>
           <OverflowToolbar>
             <Title text="{i18n>tableTitle}" level="H2" />
@@ -39,7 +39,7 @@
               <Text text="{lastname}"/>
               <Text text="{email}"/>
               <Text text="{role}"/>
-               <Text text="{unit}"/>
+               <Text text="{unit/name}"/>
               <core:Icon src="sap-icon://edit" press="onPressEdit"/>
             </cells>
           </ColumnListItem>
