@@ -1,11 +1,10 @@
 sap.ui.define(
   [
     'sap/ui/core/UIComponent',
-    'sap/ui/Device',
     'luigi/demo/employees/model/models',
     'sap/ui/model/odata/v2/ODataModel'
   ],
-  function (UIComponent, Device, models, ODataModel) {
+  function (UIComponent, models, ODataModel) {
     'use strict';
 
     return UIComponent.extend('luigi.demo.employees.Component', {

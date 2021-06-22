@@ -54,16 +54,6 @@ sap.ui.define(
 
       getRouter: function () {
         return UIComponent.getRouterFor(this);
-      },
-
-      onNavBack: function () {
-        var sPreviousHash = History.getInstance().getPreviousHash();
-
-        if (sPreviousHash !== undefined) {
-          window.history.back();
-        } else {
-          this.getRouter().navTo('appHome', {}, true /*no history*/);
-        }
       }
     });
   }

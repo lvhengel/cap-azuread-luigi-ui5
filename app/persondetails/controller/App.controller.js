@@ -4,12 +4,7 @@ sap.ui.define(
     'use strict';
 
     return Controller.extend('luigi.demo.persondetails.controller.App', {
-      onInit: function () {
-      },
-
-      onPressDetail: function (oEvent) {
-        this.navTo('detail');
-      }
+      onInit: function () {}
     });
   }
 );
