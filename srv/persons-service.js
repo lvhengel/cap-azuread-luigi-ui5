@@ -1,13 +1,11 @@
-// const cds = require('@sap/cds');
-
 module.exports = async (srv) => {
-  // Function Import userInfo()
-  const db = await cds.connect.to('db');
-  const { Persons } = db.entities;
-
   srv.before('CREATE', 'Persons', async (req) => {
-    //console.log(req);
-    //req.data.unit_ID = req.user.unit_ID;
+    req.user.is('employee') || req.reject(403);
+  });
+
+  srv.before('UPDATE', async (req) => {
+    req.data.email === req.user.email ||
+      req.reject(403, 'Not authorized to change your own email address');
   });
 
   srv.before('READ', 'Persons', async (req) => {

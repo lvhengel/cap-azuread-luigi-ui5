@@ -1,9 +1,10 @@
 sap.ui.define(
   [
     'luigi/demo/persondetails/controller/BaseController',
-    'sap/ui/core/Fragment'
+    'sap/ui/core/Fragment',
+    'sap/m/MessageBox'
   ],
-  function (Controller, Fragment) {
+  function (Controller, Fragment, MessageBox) {
     'use strict';
 
     return Controller.extend('luigi.demo.persondetails.controller.Detail', {
@@ -40,8 +41,26 @@ sap.ui.define(
         this._toggleButtonsAndView(false);
       },
       handleSavePress: function (oEvent) {
+        var oModel = this.getView().getModel();
+        // Unfortunately the success handler of submitchanges doesn't work since we disabled batch for this ODataModel
+        // to catch the success or error status code we added a "requestCompleted" handler
+
+        oModel.attachEventOnce(
+          'requestCompleted',
+          function (oEvent) {
+            var oResponse = oEvent.getParameter('response');
+
+            if (oResponse.statusCode === 403) {
+              MessageBox.error(
+                JSON.parse(oResponse.responseText).error.message.value
+              );
+            } else {
+              this._toggleButtonsAndView(false);
+            }
+          }.bind(this)
+        );
+
         this.getView().getModel().submitChanges();
-        this._toggleButtonsAndView(false);
       },
 
       _toggleButtonsAndView: function (bEdit) {
