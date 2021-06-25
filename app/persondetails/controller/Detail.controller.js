@@ -21,7 +21,7 @@ sap.ui.define(
 
       _onDetailMatched: function (oEvent) {
         var sObjectPath = this.getView().getModel().createKey('/Persons', {
-          ID: LuigiClient.getContext().id
+          ID: 'ca05f348-4c53-4ff8-a38a-33c87b6db05b'
         });
 
         this.getView().bindElement({

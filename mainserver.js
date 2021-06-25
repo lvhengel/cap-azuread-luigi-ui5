@@ -4,7 +4,7 @@ exports.launch = async (services, o) => {
   const express = require('express');
   const cds = require('@sap/cds');
 
-  const { PORT = 4004 } = process.env;
+  const { PORT = 5005 } = process.env;
   const app = express();
 
   app.use('/', express.static('app'));

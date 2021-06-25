@@ -66,10 +66,11 @@
     }
   },
   "cds": {
+    "db": {
+      "kind": "sqlite",
+      "model": "*"
+    },
     "requires": {
-      "auth": {
-        "impl": "srv/auth.js"
-      },
       "db": {
         "kind": "sqlite",
         "model": "*"

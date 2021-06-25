@@ -14,9 +14,7 @@ sap.ui.define(
 
       onInit: function () {
         LuigiClient.addInitListener((initialContext) => {
-          this.getView()
-            .byId('idTitle')
-            .setText(`Welcome ${LuigiClient.getContext().firstname}!`);
+          this.getView().byId('idTitle').setText(`Welcome Leo!`);
         });
         LuigiClient.addContextUpdateListener((updatedContext) => {
           console.log('Luigi Client Updated!');

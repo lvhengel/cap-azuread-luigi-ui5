@@ -23,9 +23,9 @@ sap.ui.define(
           '/sap.app/dataSources/persons/uri'
         );
         var personsParameters = {
-          headers: {
-            Authorization: 'Bearer ' + accessToken
-          },
+          // headers: {
+          //   Authorization: 'Bearer ' + accessToken
+          // },
           useBatch: false,
           defaultBindingMode: 'TwoWay',
           defaultUpdateMethod: 'Merge'
