@@ -1,6 +1,6 @@
 module.exports = async (srv) => {
   srv.before('CREATE', 'Persons', async (req) => {
-    req.user.is('employee') || req.reject(403);
+    req.user.is('Employee') || req.reject(403);
   });
 
   srv.before('UPDATE', async (req) => {
